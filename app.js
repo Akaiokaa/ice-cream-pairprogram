@@ -5,7 +5,7 @@ const app = express();
 // Enable static file serving (client side file that does not communicate with database)
 app.use(express.static('public'));
 
-const PORT = 3001;
+const PORT = 3002;
 
 app.get('/', (req, res) => {
     res.sendFile(`${import.meta.dirname}/views/home.html`);
