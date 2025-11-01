@@ -29,11 +29,12 @@ app.post('/submit-order', (req, res) => {
     // res.render(`${import.meta.dirname}/views/confirmation.html`);
     const dateOrdered = new Date();
     const order = {
+        timestamp: dateOrdered.toDateString(),
         name: req.body.name,
+        email: req.body.email,
         cone: req.body.cone,
         toppings: req.body.toppings,
-        comments: req.body.comments,
-        timestamp: dateOrdered.toLocaleString()
+        comments: req.body.comments
     };
     // //const prder = req.body; order.fname
     orders.push(order);
