@@ -1,18 +1,46 @@
-
-.error{
-    color: red;
-    display: none;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* body html styling */
+html{
+    height: 100%;
 }
 body {
+    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightblue;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* form styling */
+main {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 620px;
+    background-color: white;
+    padding: 10px 2rem;
+    border-radius: rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.677);
 }
 
 h1 {
-    justify-self: center;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+form fieldset{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    border-radius: 6px;
+}
 legend {
     margin: 0 auto;
     color: green;
@@ -20,11 +48,9 @@ legend {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-form fieldset{
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    border-radius: 6px;
+#email, #name {
+    width: 100%;
+    padding: 0.5rem 0.3rem;
 }
 
 label {
@@ -42,6 +68,11 @@ textarea {
     margin-bottom: 2rem;
 }
 
+select {
+    width: 100%;
+    padding: .5rem 0.3rem;
+}
+/* button and footer styling */
 #submitButton{
     width: 100%;
     background-color: green;
@@ -53,22 +84,19 @@ textarea {
     border-radius: 4px;
 }
 
-select {
-    width: 100%;
-    padding: .5rem 0.3rem;
+footer {
+    background-color: green;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
 }
 
-#email, #name {
-    width: 100%;
-    padding: 0.5rem 0.3rem;
+footer a{
+    text-decoration: none;
+    color: white;
 }
-
-main {
-    margin: 0 auto;
-    width: 70%;
-    max-width: 620px;
-    background-color: white;
-    padding: 10px 2rem;
-    border-radius: rem;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.677);
+/* other */
+.error{
+    color: red;
+    display: none;
 }
