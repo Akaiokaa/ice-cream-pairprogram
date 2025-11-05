@@ -8,13 +8,13 @@ app.use(express.urlencoded({extended: true}));
 // Enable static file serving (client side file that does not communicate with database)
 app.use(express.static('public'));
 const orders = [];
-const PORT = 3002;
+const PORT = 3009;
 
 app.get('/admin', (req,res) =>{
     res.render('admin', {orders})
 })
 app.get('/confirmation', (req, res) => {
-    res.render('confirmation');
+    res.render('confirmation', {orders});
 })
 app.get('/', (req, res) => {
     res.render('home');
@@ -33,6 +33,7 @@ app.post('/submit-order', (req, res) => {
         name: req.body.name,
         email: req.body.email,
         cone: req.body.cone,
+        flavor: req.body.flavor,
         toppings: req.body.toppings,
         comments: req.body.comments
     };
@@ -42,5 +43,5 @@ app.post('/submit-order', (req, res) => {
     // // console.log(orders);
     // res.render('confirmation', {order: order
     // });
-    res.render('confirmation');
+    res.render('confirmation', {orders});
 });
