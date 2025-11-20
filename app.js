@@ -41,7 +41,7 @@ app.get('/admin', async (req,res) =>{
     }
 });
 
-app.get('/confirmation', (req, res) => {
+app.get('/confirmation', async (req, res) => {
     res.render('confirmation', {orders});
 })
 app.get('/', (req, res) => {
@@ -52,7 +52,7 @@ app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 })
 
-app.post('/submit-order', async (req, res) => {
+app.post('/confirm', async (req, res) => {
     // console.log(req.body);
     // res.render(`${import.meta.dirname}/views/confirmation.html`);
     try {
